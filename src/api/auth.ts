@@ -6,7 +6,7 @@ const router = Router()
 router.get('/test', (req, res) => {
   res
     .status(200)
-    .json({ NODE_ENV: process.env })
+    .json({ result: true })
 })
 
 router.post('/signin', (req, res) => {
