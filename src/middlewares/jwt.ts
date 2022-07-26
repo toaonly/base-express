@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
 
-const secret = <string>process.env.JWT_SECRET
+const secret = process.env.JWT_SECRET as string
 
 export const verify = (req: Request, res: Response, next: NextFunction) => {
-  const token = <string>req.headers['Authorization']
+  const token = req.headers['Authorization'] as string
   let payload
 
   try {
-    payload = <any>jwt.verify(token, secret)
+    payload = jwt.verify(token, secret) as any
 
     res.locals.payload = payload
   } catch (err) {
