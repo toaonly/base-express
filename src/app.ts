@@ -1,10 +1,12 @@
 import cors from 'cors'
 import express, { Request, Response } from 'express'
+import fileUpload from 'express-fileupload'
 import api from './api'
 
 const app = express()
 
 app.disable('x-powered-by')
+app.use(fileUpload())
 app.use(
   cors({
     optionsSuccessStatus: 200,
