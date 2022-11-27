@@ -1,6 +1,5 @@
 import { Request, Response, Router } from 'express'
 import { verify, generateToken } from '../middlewares/jwt'
-import upload from '../middlewares/multer'
 
 const router = Router()
 
